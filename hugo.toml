@@ -1,4 +1,8 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'My New Hugo Site LOL'
 theme = 'hello-friend-ng'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
