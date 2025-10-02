@@ -21,9 +21,9 @@ replyByEmail = false
 disableImageOptimization = false
 disableImageOptimizationMD = false
 disableTextInHeader = false
-# backgroundImageWidth = 1200
+backgroundImageWidth = 1200
 
-# defaultBackgroundImage = "img/hrrt_logo.png" # used as default for background images 
+defaultBackgroundImage = "img/hrrt_logo.png" # used as default for background images 
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 # defaultSocialImage = "/android-chrome-512x512.png" # used as default for social media sharing (Open Graph and Twitter)
 
@@ -37,7 +37,7 @@ giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [header]
-  layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true
@@ -47,7 +47,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showScrollToTop = true
 
 [homepage]
-  layout = "background" # valid options: page, profile, hero, card, background, custom
+  layout = "profile" # valid options: page, profile, hero, card, background, custom
   homepageImage = "img/hrrt_logo.png" # used in: hero, and card
   showRecent = false
   showRecentItems = 5

@@ -2,7 +2,7 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "WhoAmI?"
+title = "Carsten Hirt - Who Am I?"
 
 [params]
   displayName = "EN"
@@ -10,9 +10,9 @@ title = "WhoAmI?"
   rtl = false
   dateFormat = "2 January 2006"
   logo = "img/hrrt_logo.png"
-  # secondaryLogo = "img/secondary-logo.png"
-   description = "My awesome website"
-  # copyright = "Copy, _right?_ :thinking_face:"
+  # secondaryLogo = "img/hrrt_logo.png"
+  description = "Who am I?"
+  # copyright = "&copy
 
 [params.author]
   name = "Carsten Hirt"
@@ -20,7 +20,7 @@ title = "WhoAmI?"
   image = "https://avatars.githubusercontent.com/u/85865432?v=4"
 #   imageQuality = 96
   headline = "IT Solution Design Manager | Tech & IT Nerd | Camper"
-  bio = "A little bit about you"
+  bio = "A little bit about me"
    links = [
       { email = "mailto:hello@hirt.koeln" },
 #     { link = "https://link-to-some-website.com/" },
