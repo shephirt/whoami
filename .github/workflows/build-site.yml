@@ -14,6 +14,12 @@ jobs:
     name: Setup environment
     runs-on: ubuntu-latest
 
+
+
+  build_site:
+    name: Setup environment and build site
+    runs-on: ubuntu-latest
+    
     steps:
       # 1️⃣ Repository auschecken
       - name: Checkout repository
@@ -30,11 +36,6 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-  build_site:
-    name: Build site
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
       # 3️⃣ Hugo Seite bauen
       - name: Build Hugo
         run: hugo --minify
@@ -49,7 +50,7 @@ jobs:
           git push origin main
   
   deploy:
-    name: Deploy to Server
+    name: Deploy site to Server
     runs-on: ubuntu-latest
     needs: build_site
     steps:
