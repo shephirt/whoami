@@ -10,12 +10,6 @@ on:
   
 
 jobs:
-  setup:
-    name: Setup environment
-    runs-on: ubuntu-latest
-
-
-
   build_site:
     name: Setup environment and build site
     runs-on: ubuntu-latest
