@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.hrrt.de/sitemap.xml
