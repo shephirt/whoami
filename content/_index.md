@@ -1,3 +1,3 @@
 ---
-layoutBackgroundHeaderSpace: false
+layoutBackgroundHeaderSpace: true
 ---
