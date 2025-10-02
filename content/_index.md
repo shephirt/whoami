@@ -1,0 +1,3 @@
+---
+layoutBackgroundHeaderSpace: false
+---

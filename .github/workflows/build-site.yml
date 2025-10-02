@@ -1,0 +1,55 @@
+name: Build & Deploy Hugo
+
+on:
+  push:
+#    paths-ignore:
+#      - 'public/**'
+    branches:
+      - main
+  workflow_dispatch:
+  
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Repository auschecken
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+          submodules: recursive
+
+      # 2️⃣ Hugo installieren
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      # 3️⃣ Hugo Seite bauen
+      - name: Build Hugo
+        run: hugo --minify
+
+      # 4️⃣ Gebaute public/ ins Repo pushen
+      - name: Commit generated site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public
+          git commit -m "Rebuild site [skip ci]" || echo "No changes to commit"
+          git push origin main
+
+      # 5️⃣ Deploy auf Server per SSH
+      - name: Deploy to server
+        uses: burnett01/rsync-deployments@7.1.0
+        with:
+          switches: -avz --delete
+          path: public/
+          remote_path: ${{ secrets.DEPLOY_PATH }}
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_key: ${{ secrets.DEPLOY_KEY }}
