@@ -2,7 +2,8 @@ name: Build & Deploy Hugo
 
 on:
   push:
-#    paths-ignore:
+    paths-ignore:
+      - '.github/**' 
 #      - 'public/**'
     branches:
       - main
