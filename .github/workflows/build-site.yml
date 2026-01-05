@@ -45,7 +45,7 @@ jobs:
 
       # 5️⃣ Deploy auf Server per SSH
       - name: Deploy to server
-        uses: burnett01/rsync-deployments@8.0.2
+        uses: burnett01/rsync-deployments@8.0.3
         with:
           switches: -avz --delete
           path: public/
